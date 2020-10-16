@@ -42,6 +42,9 @@ class Airplane {
 
 class Person {
   constructor`(name, age)
+  this.name = name;
+  this.name = age;
+  return `${ name } and ${ age } `
 
 
 }
