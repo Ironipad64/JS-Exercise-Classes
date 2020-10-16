@@ -41,6 +41,11 @@ class Airplane {
 */
 
 class Person {
+  constructor`(name, age)
+  this.name = name;
+  this.name = age;
+  return `${ name } and ${ age } `
+
 
 }
 
@@ -58,7 +63,27 @@ class Person {
         + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
 */
 
+
 class Car {
+  constructor(model,milesPerGallon){
+    this.model = model;
+    this.milesPerGallon = milesPerGallon;
+    this.tank = 0;
+    this.odometer = 0;
+  }
+  fill(gallons){
+    this.tank = gallons+this.tank;
+  }
+  drive(distance){
+    if(distance/this.milesPerGallon >= this.tank){
+      this.tank = 0;
+      this.odometer = (this.milesPerGallon * this.tank)
+      return `I ran out of fuel at ${ this.odometer } miles`
+    }else{
+      this.tank = this.tank - (distance/this.milesPerGallon)
+      this.odometer = this.odometer + distance
+    }
+  }
 
 }
 
@@ -71,7 +96,7 @@ class Car {
         + location
     - Its constructor should initialize `name`, `age` and `location` properties on the instance.
     - Instances of Lambdasian should be able to `.speak()`:
-        + Speaking should return a phrase `Hello my name is {name}, I am from {location}`.
+        + Speaking should return a phrase `Hello my name is { name }, I am from { location } `.
         + {name} and {location} of course come from the instance's own properties.
 */
 class Lambdasian {
@@ -86,12 +111,12 @@ class Lambdasian {
         + `specialty`: what the instance of Instructor is good at, i.e. 'redux'
         + `favLanguage`: i.e. 'JavaScript, Python, Elm etc.'
         + `catchPhrase`: i.e. `Don't forget the homies`.
-    - The constructor calls the parent constructor passing it what it needs.
-    - The constructor should also initialize `specialty`, `favLanguage` and `catchPhrase` properties on the instance.
+  - The constructor calls the parent constructor passing it what it needs.
+    - The constructor should also initialize`specialty`, `favLanguage` and`catchPhrase` properties on the instance.
     - Instructor instances have the following methods:
-        + `demo` receives a `subject` string as an argument and returns the phrase 'Today we are learning about {subject}' where subject is the param passed in.
-        + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
-*/
++ `demo` receives a`subject` string as an argument and returns the phrase 'Today we are learning about {subject}' where subject is the param passed in.
+        + `grade` receives a`student` object and a`subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
+  * /
 class Instructor {
 
 }
